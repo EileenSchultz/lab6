@@ -23,7 +23,7 @@ public class ReaderFile
         using var sr = new StreamReader(_path);
         if (sr.ReadLine() == null) //если файл пустой 
         {
-           return yield break;
+           yield break;
         }
 
         for (int i = 0; i < skip && sr.ReadLine() != null; i++) {} //пропускаем строки

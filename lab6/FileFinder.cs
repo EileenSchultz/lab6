@@ -2,9 +2,9 @@ namespace lab6;
 
 public class FileFinder
 {
-    public static string FindFile(string folder, string fileNames, char delimiter)
+    public static string FindFile(string folder, string fileNames, out char delimiter)
     {
-        
+        delimiter = ' ';
         
         if (string.IsNullOrEmpty(folder) || string.IsNullOrEmpty(fileNames)) //проверка на пустоту файла или имени
         {
@@ -21,7 +21,8 @@ public class FileFinder
                 string fileWithEx = Path.GetFileNameWithoutExtension(file); 
                 string extension = Path.GetExtension(file).ToLover();
 
-                if (fileWithEx.ToLover() == name.ToLover() && (extension == ".csv" || extension == ".tsv"))
+                if (fileWithEx.Equals(fileNames, StringComparison.OrdinalIgnoreCase) 
+                    && (extension == ".csv" || extension == ".tsv"))
                 {
                     delimiter = (extension == ".csv") ? ';' : '\t'; //проверка на расширение файла (csv или tsv)
                     Console.WriteLine($"Файл {file} найден");
