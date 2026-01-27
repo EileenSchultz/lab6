@@ -14,7 +14,7 @@ public class FileFinder
 
         try
         {
-            string[] allFiles = Directory.GetFiles(folder, '*.*'); //полученаем все файлы в папке
+            string[] allFiles = Directory.GetFiles(folder, "*.*"); //полученаем все файлы в папке
             
             foreach (string file in allFiles) //перебор
             {
