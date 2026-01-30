@@ -4,7 +4,7 @@ public class FileFinder
 {
     public static string FindFile(string folder, string fileNames, out char delimiter)
     {
-        delimiter = ' ';
+        delimiter = ' '; //значение по умолчанию
         
         if (string.IsNullOrEmpty(folder) || string.IsNullOrEmpty(fileNames)) //проверка на пустоту файла или имени
         {
