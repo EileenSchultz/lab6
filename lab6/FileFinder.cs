@@ -19,7 +19,7 @@ public class FileFinder
             foreach (string file in allFiles) //перебор
             {
                 string fileWithEx = Path.GetFileNameWithoutExtension(file); 
-                string extension = Path.GetExtension(file).ToLover();
+                string extension = Path.GetExtension(file).ToLower();
 
                 if (fileWithEx.Equals(fileNames, StringComparison.OrdinalIgnoreCase) 
                     && (extension == ".csv" || extension == ".tsv"))
